@@ -42,12 +42,44 @@ router.post('/', (req, res) => {
     })
 });
 
+// update a category by its `id` value
 router.put('/:id', (req, res) => {
-  // update a category by its `id` value
+  Category.update (
+    {
+      category_name:req.body.category_name,
+    },
+    {
+      where: {
+        id: req.params.id
+      }
+    }
+  ) .then ((updatedCategory)=>{
+    if (updatedCategory[0]===0) {
+      return res.status(404).json({msg: "no category found"})
+    }
+    res.status(200).json(updatedCategory)
+  }). catch ((err)=> {
+    console.log(err);
+    res.status(500).json({err:err})
+  })
 });
 
-router.delete('/:id', (req, res) => {
-  // delete a category by its `id` value
-});
+// delete a category by its `id` value
+  router.delete('/:id', (req, res) => {
+    Category.destroy({
+      where: {
+        id: req.params.id,
+      },
+    }).then ((delCategory)=>{
+      if (delCategory === 0) {
+        return res.status(404).json({msg: "no category found!"})
+      }
+      res.status(200).json(delCategory)
+    }).catch ((err)=>{
+      console.log(err);
+      res.status(500).json({err:err})
+      })
+  });
+
 
 module.exports = router;
