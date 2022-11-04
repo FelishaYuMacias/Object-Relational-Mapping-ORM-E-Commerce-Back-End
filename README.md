@@ -12,7 +12,7 @@ Module 13 Challenge
 
 ## Description
 
-## User Story
+### User Story
 
 ```md
 AS A manager at an internet retail company
@@ -20,7 +20,7 @@ I WANT a back end for my e-commerce website that uses the latest technologies
 SO THAT my company can compete with other e-commerce companies
 ```
 
-## Acceptance Criteria
+### Acceptance Criteria
 
 ```md
 GIVEN a functional Express.js API
@@ -51,7 +51,13 @@ npm i
 If you do not have Insomnia installed for testing download it here:
 https://insomnia.rest/download
 
+
+
 ## Usage
+
+See video below for walkthrough.
+
+https://drive.google.com/file/d/1697SDLxzi7AgFPcfzPlU_L_Q0Le51tCk/view
 
 Update the env.EXAMPLE file name to .env (delete .EXAMPLE from the name) and update with your username and password for MySql.
 
@@ -151,11 +157,6 @@ Then use Insomnia to test the various functions.
 * Delete a tag (id 9)
     * DELETE http://localhost:3001/api/tags/9 
 
-
-
-See video below for walkthrough.
-
-https://drive.google.com/file/d/1697SDLxzi7AgFPcfzPlU_L_Q0Le51tCk/view
 
 
 ## Credits
